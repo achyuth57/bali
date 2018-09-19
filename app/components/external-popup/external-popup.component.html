@@ -1,0 +1,18 @@
+<div class="external-popup" *ngIf="visible">
+  <div class="external-popup-background" (click)="close();"></div>
+
+  <div class="external-popup-modal">
+    <div class="external-popup-modal-inner">
+      <div class="overlay-close"></div>
+      <div class="external-popup-modal-title">You are leaving health.gsk.com.au</div>
+      <div class="external-popup-modal-copy">
+        The information you are about to be referred to may not comply with the Australian regulatory requirements. Further information relevant to the Australian environment is available from the company or via the Product Information.
+      </div>
+
+      <div class="external-popup-modal-buttons">
+        <a class="button button-secondary" title="Contiue" target="_blank" [href]="url">Continue</a>
+        <a class="external-popup-modal-back-button" title="Go back" (click)="close();">Go back</a>
+      </div>
+    </div>
+  </div>
+</div>

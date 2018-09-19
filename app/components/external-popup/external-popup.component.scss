@@ -1,0 +1,268 @@
+@import "../../../lib/sass/variables";
+@import "../../../lib/sass/helpers";
+
+$ns: external-popup;
+
+.#{$ns} {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  font-family: Arial;
+  z-index: 9997;
+
+  .#{$ns}-background{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: #000;
+    z-index: 9998;
+    filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=70);
+    opacity: 0.7;
+  }
+
+  .#{$ns}-modal{
+    position: absolute;
+    left:50%;
+    max-width: 582px;
+    width:100%;
+
+    z-index: 9999;
+    top:50%;
+    @include transform(translate(-50%, -50%));
+    padding:20px;
+
+    .#{$ns}-modal-inner{
+      background-color: $color-background;
+      padding:50px 40px 50px 40px;
+      text-align: center;
+
+      @include respond-below(sm)
+      {
+        padding:30px 30px;
+      }
+
+      .#{$ns}-modal-title {
+        font-size:24px;
+        font-weight:bold;
+        margin-bottom:30px;
+
+        @include respond-below(sm) {
+          font-size:20px;
+          line-height:24px;
+        }
+      }
+
+      .#{$ns}-modal-copy{
+        font-size:15px;
+        line-height: 22px;
+        margin-bottom:30px;
+      }
+
+      .#{$ns}-modal-buttons{
+        height:42px;
+
+        .#{$ns}-modal-back-button{
+          font-size:16px;
+          font-weight:bold;
+          margin-left:10px;
+          display:inline-block;
+          color:$color-button-primary;
+          cursor: pointer;
+        }
+      }
+    }
+  }
+
+}
+
+
+
+/* line 14, ../../sass/core/overlay.scss */
+.overlay-container {
+  position: absolute;
+  width: 100%;
+  top: 150px;
+  text-align: center;
+  z-index: 9999;
+  padding-bottom: 30px;
+}
+b, strong {
+  font-weight: bold;
+}
+/* line 23, ../../sass/core/overlay.scss */
+.overlay-content {
+  position: relative;
+  min-width: 80px;
+  min-height: 80px;
+  max-width: 90%;
+  padding: 10px;
+  display: inline-block;
+  background: #FFF;
+  text-align: left;
+  border: solid 2px #323131;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  -ms-border-radius: 10px;
+  -o-border-radius: 10px;
+  border-radius: 10px;
+}
+
+span{
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+
+.rte-disclaimer-overlay p{
+  color: #72635d;
+  font-size: 15px;
+  font-family: arial;
+  margin: 0px;
+}
+/* line 36, ../../sass/core/overlay.scss */
+.overlay-content-inner {
+  overflow: hidden;
+}
+
+/* line 40, ../../sass/core/overlay.scss */
+.overlay-container .overlay-close {
+  width: 25px;
+  height: 25px;
+  z-index: 9999;
+  font-size: 25px;
+  position: absolute;
+  right: 15px;
+  background: url(/assets/img/close-icon.png) no-repeat;
+  cursor: Pointer;
+  display: block;
+  top: 20px;
+}
+
+
+.overlay-container .overlay-close:hover{
+  background: url(/assets/img/close-hover.png) no-repeat;
+  color:#f36633;
+}
+/* line 53, ../../sass/core/overlay.scss */
+.overlay-loading {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background: url(/assets/img/loader.gif) no-repeat 50% 50%;
+}
+
+
+/*------------------------ OVERLAY ------------------------------*/
+/*cf - starts*/
+/*--------------------- SHARE THIS PAGE - MODAL ---------------------*/
+.overlay-container{
+  left:50%;
+  width:582px;
+  margin-left:-291px;
+}
+
+.overlay-container .overlay-content{
+  border-radius: 0px;
+  background:#f0efed;
+  min-width:582px;
+  padding:40px 44px;
+  border:none;
+  box-sizing:border-box;
+}
+
+.box-overlay-share-this .wsform-hint-js{
+  margin-top:0px;
+}
+.overlay-container .box-form .rte-form-intro p a:hover{
+  text-decoration:none;
+}
+.box-overlay-share-this .privacy-policy.privacyPolicy .privacyPolicy-text{
+  display: inline-block;
+  float: none;
+  width: auto;
+  margin-top:11px;
+}
+
+/*--------------------- 3rd PARTY WEBSITE - OVERLAY ---------------------*/
+.rte-disclaimer-overlay{
+  padding:10px 60px 20px 15px;
+}
+.rte-disclaimer-overlay h2{
+  margin-bottom:5px;
+}
+.rte-disclaimer-overlay p {
+  margin: 0px;
+  line-height: 1.5em;
+}
+.rte-disclaimer-overlay .rte-green-button,
+.box-disclaimer .rte-disclaimer-overlay .disclaimer-continue{
+  float: left;
+  margin-top: 17px !important;
+
+}
+.rte-disclaimer-overlay .rte-back-button,
+.rte-disclaimer-overlay .disclaimer-goback{
+  float: left;
+  margin-top: 18px;
+  padding-left: 18px;
+}
+
+.rte-disclaimer-overlay .disclaimer-continue {
+  width: 110px;
+}
+
+.rte-disclaimer-overlay .disclaimer-continue a {
+  background-color: #15717D;
+  padding: 10px 20px;
+  box-sizing: border-box;
+  border-radius: 30px;
+  text-align: center;
+  cursor: pointer;
+  height: 46px;
+  width: auto;
+}
+
+
+.rte-disclaimer-overlay .disclaimer-continue a:hover{
+  background-color: #FFFFFF;
+  border:2px solid #15717D;
+  color:#15717D;
+  padding: 8px 18px;
+  text-decoration:none;
+}
+
+.rte-disclaimer-overlay .disclaimer-continue {
+  color: #fff;
+}
+
+
+.rte-disclaimer-overlay .disclaimer-continue a{
+  color: #ffffff;
+}
+
+.richText a, .read-more {
+  font-size: 15px;
+  font-weight: bold;
+  color: #15717e;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.rte-disclaimer-overlay h2{
+  font-family: arial;
+  margin-bottom: 5px;
+  font-size: 24px;
+  color: #333333;
+  line-height: 30px;
+  margin: 10px 0;
+  font-weight: bold;
+}
