@@ -1,0 +1,68 @@
+@import "../../../../lib/sass/_variables";
+@import "../../../../lib/sass/_helpers";
+
+$ns: leaderboard-step;
+
+.#{$ns} {
+  .#{$ns}-inner {
+    @include inner-container();
+
+    text-align: center;
+  }
+
+  .#{$ns}-chart-container{
+    width: 100%;
+    padding: 30px 0;
+    border-top: 1px solid $color-border-primary;
+    border-bottom: 1px solid $color-border-primary;
+
+    @include respond-below(xs){
+      padding: 15px 0;
+    }
+  }
+
+
+  .#{$ns}-title{
+    font-size:24px;
+    font-weight: bold;
+    margin-bottom: 20px;
+    padding-top:35px;
+
+    @include respond-below(sm){
+      font-size:20px;
+    }
+  }
+
+  .#{$ns}-retake
+  {
+    margin-bottom: 20px;
+  }
+
+  .#{$ns}-subtitle{
+    font-size:15px;
+    margin-bottom:30px;
+
+    @include respond-below(xs){
+      margin-bottom:20px;
+    }
+  }
+
+  .#{$ns}-further-info{
+    font-size:15px;
+    font-weight: bold;
+    padding-top:35px;
+    margin-bottom: 25px;
+
+    @include respond-below(sm){
+      padding-top:25px;
+    }
+  }
+
+  .#{$ns}-sentence-split{
+    display: none;
+
+    @include respond-below(xs){
+      display: inline-block;
+    }
+  }
+}

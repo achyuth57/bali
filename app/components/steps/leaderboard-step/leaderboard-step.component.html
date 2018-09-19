@@ -1,0 +1,19 @@
+<div *ngIf="isActive" class="leaderboard-step">
+  <div class="leaderboard-step-inner">
+    <div class="leaderboard-step-title">Congratulations,<br class="leaderboard-step-sentence-split"> you scored {{score}} points</div>
+    <div class="leaderboard-step-retake">
+      <a class="button button-secondary" style="display: inline-block" title="Retake Quiz" href="javascript:location.reload();">
+        Retake Quiz
+      </a>
+    </div>
+    <div class="leaderboard-step-subtitle">How did you compare against your peers?</div>
+
+    <div class="leaderboard-step-chart-container">
+        <chart [options]="options" (load)="loadChart($event.context)"></chart>
+    </div>
+
+    <div class="leaderboard-step-further-info">For further information on travel vaccines and malaria prophylaxis</div>
+
+    <ng-content></ng-content>
+  </div>
+</div>
