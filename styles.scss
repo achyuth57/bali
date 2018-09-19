@@ -1,0 +1,64 @@
+@import "lib/sass/resets";
+@import "lib/sass/variables";
+@import "lib/sass/helpers";
+@import "lib/sass/responsive";
+@import "lib/sass/grid";
+@import "lib/sass/typography";
+@import "lib/components/button/styles";
+
+@import "lib/steps/step1";
+@import "lib/steps/step10";
+@import "lib/steps/step11";
+@import "lib/steps/question-base";
+@import "lib/steps/question1";
+@import "lib/steps/question2";
+@import "lib/steps/question3";
+@import "lib/steps/question4";
+
+body{
+  font-family: Arial;
+  color:$color-text;
+}
+
+.break-word{
+  word-break: break-all;
+}
+
+.no-break-word{
+  white-space: nowrap;
+  word-break: keep-all;
+}
+.highlight{
+ color:$color-button-primary;
+}
+a{
+  text-decoration: none;
+}
+strong{
+  font-weight:bold;
+}
+.underline{
+  text-decoration: underline;
+}
+em{
+  font-style: italic;
+}
+chart {
+  display: block;
+}
+.chart-labels{
+  text{
+    font-family: Arial;
+    font-size: 15px !important;
+    font-weight: bold;
+    color: $color-chart-labels;
+
+    @include respond-below(sm){
+      font-size: 12px !important;
+    }
+
+    @include respond-below(xs){
+      font-size: 8px !important;
+    }
+  }
+}
