@@ -1,0 +1,23 @@
+<div [ngSwitch]="mode">
+  <a class="question-option" [ngClass]="{'selected':selected}" (click)="onClick($event)" *ngSwitchCase="'numberedItem'">
+    <span class="question-option-left">
+      {{number}}
+    </span>
+    <span class="question-option-right" [innerHTML]="title"></span>
+  </a>
+  <a class="question-option text-square" [ngClass]="{'selected':selected}" (click)="onClick($event)" *ngSwitchCase="'textSquare'">
+    <span class="title" [innerHTML]="title">
+    </span>
+  </a>
+  <a class="question-option icon-square" [ngClass]="{'selected':selected}" (click)="onClick($event)" *ngSwitchCase="'iconSquare'">
+    <div class="icon" [inlineSVG]="icon"></div>
+  </a>
+  <a class="question-option list-item" [ngClass]="{'selected':selected}" (click)="onClick($event)" *ngSwitchCase="'listItem'">
+    <div class="left-col">
+      <span class="checkbox"></span>
+    </div>
+    <div class="right-col">
+      <span class="title" [innerHTML]="title"></span>
+    </div>
+  </a>
+</div>
