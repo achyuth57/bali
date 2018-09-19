@@ -1,1 +1,38 @@
+$ns: button;
 
+a.#{$ns}{
+  padding: 10px 22px;
+}
+
+.#{$ns} {
+  height:42px;
+  font-size:18px;
+  font-weight: bold;
+  min-width: 140px;
+  border:2px solid $color-button-primary;
+  border-radius: 50px;
+  cursor:pointer;
+  text-decoration: none;
+
+  &.#{$ns}-primary {
+    background-color: $color-button-primary-background;
+    color: $color-button-primary;
+    @include transition(color $transition-hover-duration, background-color $transition-hover-duration);
+
+    &:hover{
+      background-color:$color-button-primary;
+      color: $color-button-primary-background;
+    }
+  }
+
+  &.#{$ns}-secondary {
+    background-color:$color-button-primary;
+    color: $color-button-primary-background;
+    @include transition(color $transition-hover-duration, background-color $transition-hover-duration);
+
+    &:hover{
+      background-color:$color-button-primary-background;
+      color: $color-button-primary;
+    }
+  }
+}
