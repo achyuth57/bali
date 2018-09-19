@@ -1,0 +1,10 @@
+@import "../../../../lib/sass/_variables";
+@import "../../../../lib/sass/_helpers";
+
+$ns: simple-step;
+
+.#{$ns} {
+  .#{$ns}-inner {
+    @include inner-container();
+  }
+}
