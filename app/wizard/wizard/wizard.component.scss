@@ -1,0 +1,57 @@
+@import "../../../lib/sass/_variables";
+@import "../../../lib/sass/_helpers";
+
+$ns: wizard;
+
+.#{$ns}{
+  max-width:$page-max-width;
+  margin:0 auto;
+
+  background: $color-background;
+
+  @include respond-min(sm)
+  {
+    border: $page-border-width solid $color-page-border;
+  }
+
+  .#{$ns}-title {
+    @include inner-container();
+
+    padding-top:20px;
+    padding-bottom:20px;
+    display:table;
+    font-size: 40px;
+    font-weight:bold;
+    border-bottom: 2px solid $color-wizard-divider;
+    width: 100%;
+    margin-bottom:20px;
+
+    .#{$ns}-title-contents{
+      display:table-cell;
+      vertical-align: middle;
+    }
+  }
+
+  .#{$ns}-step-container {
+
+  }
+
+  .#{$ns}-footer {
+    @include inner-container();
+
+    margin-top:20px;
+    border-top: 2px solid $color-wizard-divider;
+
+    padding-top:40px;
+    padding-bottom:40px;
+
+    text-align: center;
+
+    .button{
+      margin-left: 200px;
+      &:first-child{
+        margin-left:0;
+      }
+    }
+  }
+}
