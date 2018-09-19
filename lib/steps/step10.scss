@@ -1,0 +1,432 @@
+$ns: step10;
+
+.#{$ns}{
+  overflow: hidden;
+
+  .underline{
+    text-decoration: underline !important;
+  }
+
+  .#{$ns}-button-secondary{
+    margin: 15px auto 48px;
+    display: block;
+    min-width: 221px;
+
+    @include respond-below(xs){
+      margin: 23px auto 14px;
+    }
+  }
+
+
+  .#{$ns}-display-col{
+    font-size: 20px;
+    font-weight: bold;
+    line-height: 31px;
+
+    @include respond-min(sm){
+      width: 31%;
+      float: left;
+      font-size: 24px;
+      padding-right: 25px;
+    }
+
+    @include respond-below(sm){
+      text-align: center;
+    }
+
+    .#{$ns}-logo{
+      margin: 0 0 32px 0px;
+      display: block;
+      width: 100%;
+      transform: translateZ(0);
+      //max-height: 88px;
+
+      @include respond-below(sm){
+        width: 240px;
+        text-align: center;
+        margin: 40px auto 44px ;
+
+      }
+    }
+
+    .super-script{
+      font-size: 17px;
+      display: inline-block;
+      top: -9px;
+      left: -2px;
+      position: relative;
+
+      @include respond-below(sm){
+        font-size: 13px;
+        left: 0px;
+      }
+    }
+    .sub-script{
+      font-size: 17px;
+      display: inline-block;
+      bottom: -3px;
+      left: 0;
+      position: relative;
+
+      @include respond-below(sm){
+        font-size: 13px;
+        left: 0px;
+      }
+    }
+
+    .#{$ns}-box{
+      margin: 32px 0 0 5px;
+      //width: 96%;
+      width:100%;
+      max-height: 120px;
+      @include respond-below(sm){
+        max-width: 100%;
+        max-height: 100%;
+        width:auto;
+        margin: 23px 0 0;
+      }
+
+      @include respond-below(xs){
+        width: 245px;
+        margin-top: 22px;
+      }
+    }
+  }
+
+  .#{$ns}-info-col{
+    font-size: 15px;
+
+    @include respond-min(sm){
+      border-left: 1px solid $color-wizard-divider;
+      width: 69%;
+      float: left;
+    }
+
+    @include respond-below(sm){
+      border-top: 1px solid $color-wizard-divider;
+      margin-top: 12px;
+      padding-top: 32px;
+    }
+
+    .#{$ns}-inner-content{
+      margin-left: 18px;
+
+      @include respond-below(sm){
+        margin-left: 0;
+      }
+
+      .#{$ns}-title{
+        font-weight: bold;
+        font-size: 18px;
+        margin-bottom: 13px;
+
+        .super-script{
+          font-size: 10px;
+          position: relative;
+          top: -6px;
+        }
+        .sub-script{
+          font-size: 10px;
+          position: relative;
+          botom: -6px;
+        }
+      }
+
+      .#{$ns}-provides-intro{
+        @include respond-below(sm){
+          margin-top: 0;
+          text-align: center;
+        }
+        div{
+          padding-bottom:20px;
+          ul{
+            text-align: left;
+            padding-top:20px;
+            list-style: disc;
+            padding-left:20px;
+            padding-left:15px;
+            li{
+              padding-bottom:10px;
+            }
+          }
+        }
+        p {
+          padding-bottom:20px;
+          font-size:15px;
+          line-height:18px;
+          .sub-script{
+            font-size: 10px;
+            display: inline-block;
+            bottom: -4px;
+            position: relative;
+          }
+
+
+        }
+        .super-script{
+          font-size: 10px;
+          display: inline-block;
+          top: -4px;
+          left: 0;
+          position: relative;
+        }
+      }
+
+      .#{$ns}-provides-list{
+        margin: 14px 0 0 18px;
+        list-style-type: disc;
+        list-style-position: outside;
+        width: calc(100% - 18px);
+
+        strong{
+          font-weight: bold;
+        }
+
+        .#{$ns}-superscript{
+          font-size: 9px;
+          position: relative;
+          top: -4px;
+          font-weight: bold;
+        }
+
+        li{
+          margin-bottom: 15px;
+
+          &:last-child{
+            margin-bottom: 0;
+          }
+        }
+      }
+
+      .#{$ns}-convenient-way{
+        height: 34px;
+        border: 2px solid $color-border-primary;
+        padding: 0 10px;
+        margin: 50px 0 25px;
+
+        @include respond-below(md){
+          min-height: 34px;
+          height: auto;
+          padding: 10px 11px;
+        }
+
+        @include respond-below(sm){
+          margin: 28px 0 13px;
+        }
+
+        .#{$ns}-title{
+          margin-bottom: 0;
+
+          @include respond-min(md) {
+            position: relative;
+            top: 50%;
+            transform: translateY(-50%);
+            display: block;
+            margin-right: 20px;
+            float: left;
+          }
+        }
+
+        .#{$ns}-convenient-way-list{
+          margin-top: 0;
+          list-style: none;
+          list-style-position: outside;
+
+          li{
+            float: left;
+
+            &:before{
+              content: "\2713";
+              font-weight: bold;
+              margin-right: 10px;
+            }
+
+            &:first-child{
+              margin-right: 10px; //todo change should be 35px but goes to next line
+            }
+
+          }
+
+          @include respond-min(md) {
+            position: relative;
+            top: 50%;
+            transform: translateY(-50%);
+            display: block;
+            overflow: hidden;
+          }
+
+          @include respond-below(md){
+            margin-top: 6px;
+          }
+        }
+      }
+
+      .#{$ns}-schedule{
+        overflow: hidden;
+
+        .#{$ns}-standard-schedule{
+          margin-bottom: 4px;
+          overflow: hidden;
+
+          @include respond-below(sm){
+            margin-bottom: 7px;
+          }
+        }
+
+        .#{$ns}-row-heading{
+          background: $color-block-background-primary;
+          color: $color-text-light;
+          padding: 15px 15px;
+          line-height: 17px;
+          margin-right: 1px;
+          font-weight: bold;
+          font-size: 17px;
+          height: 82px;
+          width: 255px;
+          float: left;
+
+          @include respond-below(md){
+            width: 35%;
+            padding: 10px;
+            font-size: 15px;
+
+            br{
+              display: none;
+            }
+          }
+
+          @include respond-below(sm){
+            width: 100%;
+            height: 68px;
+            margin-bottom: 2px;
+            margin-right: 0;
+            float: inherit;
+            font-size: 15px;
+          }
+
+          div{
+            position: relative;
+            top: 50%;
+            transform: translateY(-50%);
+            display: block;
+          }
+
+          span{
+            font-size: 9px;
+            position: relative;
+            top: -4px;
+            font-weight: bold;
+          }
+        }
+
+        .#{$ns}-needle-column{
+          border: 2px solid $color-border-secondary;
+          height: 82px;
+          width: 82px;
+          float:left;
+          margin: 0 1px;
+          font-size: 12px;
+
+          @include respond-below(md){
+            width: 74px;
+          }
+
+          @include respond-below(sm){
+            width: 68px;
+            height: 68px;
+            font-size: 10px;
+          }
+
+          .#{$ns}-dose-number{
+            float: right;
+            margin-right: 5px;
+
+            @include respond-below(sm){
+              margin: 3px 3px 0 0;
+            }
+          }
+
+          img{
+            margin: 8px 0 8px 13px;
+
+            @include respond-below(sm){
+              width: 38px;
+              height: 32px;
+            }
+          }
+
+          .#{$ns}-injection-time{
+            text-align: center;
+          }
+        }
+      }
+
+      .#{$ns}-footnotes{
+        margin: 30px 0 75px;
+        font-size: 14px;
+        font-family: "Arial Narrow", Arial, serif;
+        line-height: 14px;
+
+        @include respond-below(sm){
+          margin-bottom: 26px;
+          font-size: 13px;
+        }
+
+        >div{
+          margin-bottom: 9px;
+
+          @include respond-below(sm){
+            margin-bottom: 8px;
+          }
+        }
+
+        span{
+          font-size: 9px;
+          position: relative;
+          top: -4px;
+          font-weight: bold;
+
+          @include respond-below(sm){
+            font-size: 8px;
+          }
+        }
+      }
+    }
+
+    .button-primary{
+      margin: 0 auto;
+      display: block;
+      width: 221px;
+    }
+  }
+
+  .product-info{
+    text-align: center;
+    font-size: 15px;
+    line-height: 18px;
+    
+    .highlight{
+      color: $color-button-primary;
+    }
+  }
+
+  .#{$ns}-references{
+    margin: 30px 0 0;
+    font-size: 12px;
+    text-align: center;
+    font-family: "Arial Narrow", Arial, serif;
+    line-height: 15px;
+    letter-spacing: -0.3px;
+
+    @include respond-below(md){
+      br{
+        display: none;
+      }
+    }
+
+    strong{
+      font-weight: bold;
+    }
+  }
+}
+

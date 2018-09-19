@@ -1,0 +1,157 @@
+$ns: question;
+
+.#{$ns}{
+
+  max-width: 860px;
+  margin: 0 auto;
+
+  .#{$ns}-header{
+    margin-top:30px;
+    border-bottom:1px $color-wizard-divider solid;
+    margin-bottom:30px;
+    display:table;
+    width:100%;
+
+    @include respond-below(sm){
+      margin-top:20px;
+      margin-bottom:20px;
+      display:block;
+    }
+    .#{$ns}-answer-title
+    {
+      margin-bottom:20px;
+      font-size:15px;
+      line-height: 18px;
+      text-align: center;
+    }
+    .#{$ns}-header-left{
+      display:table-cell;
+      vertical-align: top;
+      height:145px;
+      padding-bottom:15px;
+
+      @include respond-below(sm){
+        display:block;
+        height:auto;
+        padding-bottom:0;
+      }
+    }
+
+    .#{$ns}-header-right{
+      display:table-cell;
+      vertical-align: middle;
+      height:145px;
+      padding-bottom:15px;
+      padding-left:20px;
+
+      @include respond-below(sm){
+        display:block;
+        height:auto;
+        padding-bottom:0;
+        padding-left:0;
+      }
+    }
+
+    .#{$ns}-header-number{
+      font-family: Georgia;
+      font-size:115px;
+      font-style: italic;
+      color:$color-question-number;
+      line-height: 90px;
+
+      @include respond-below(sm){
+        font-size:70px;
+        margin-bottom:10px;
+        display:block;
+        line-height: normal;
+      }
+    }
+    .#{$ns}-header-question{
+      font-size:24px;
+      line-height: 26px;
+      font-weight: bold;
+      display:block;
+      margin-bottom: 15px;
+      @include respond-below(sm){
+        font-size:20px;
+        line-height: 22px;
+        text-align: center;
+      }
+    }
+    .#{$ns}-header-description{
+      font-size:15px;
+      line-height: 18px;
+      display:block;
+      margin-bottom: 15px;
+      @include respond-below(sm){
+        text-align: center;
+      }
+    }
+    .#{$ns}-header-disclaimer{
+      font-size:12px;
+      font-style: italic;
+      display:block;
+      margin-bottom: 15px;
+
+      @include respond-below(sm){
+        margin-top: -10px;
+        text-align: center;
+      }
+    }
+
+    .#{$ns}-header-result{
+      font-size:24px;
+      text-align: center;
+      font-weight:bold;
+
+      margin-bottom:30px;
+
+      @include respond-below(sm){
+        margin-bottom:20px;
+      }
+    }
+  }
+
+  .#{$ns}-content{
+
+    padding-bottom: 30px;
+    margin-bottom: 30px;
+    border-bottom:1px $color-wizard-divider solid;
+
+    @include respond-below(sm){
+      padding-bottom: 20px;
+      margin-bottom: 20px;
+    }
+
+    .#{$ns}-content-question-timer{
+      max-width: 320px;
+      margin: 0 auto;
+
+    }
+    .#{$ns}-content-question-list {
+      max-width: 480px;
+      margin: 0 auto;
+    }
+    .#{$ns}-content-question-grid{
+
+      max-width: 300px;
+      margin: 0 auto;
+
+      margin-top: 30px;
+
+      @include respond-below(sm){
+        margin-top:20px;
+      }
+    }
+    .#{$ns}-content-button-next{
+      margin:0 auto;
+      display:block;
+      margin-top:30px;
+
+      @include respond-below(sm){
+        margin-top:20px;
+      }
+    }
+  }
+}
+

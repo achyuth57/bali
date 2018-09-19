@@ -1,0 +1,148 @@
+@import '../sass/_variables.scss';
+
+$ns: step1;
+
+.#{$ns}{
+  overflow: hidden;
+  margin: -20px -20px 0 -20px;
+  padding: 20px;
+
+  .#{$ns}-image-wrapper{
+    position: absolute;
+    right: 0;
+    top: 0;
+    height:100%;
+
+    @include respond-below(sm){
+      position: inherit;
+      top:inherit;
+      height: auto;
+      margin: 0 -20px -20px;
+    }
+
+    .#{$ns}-image-lg{
+      display: block;
+      float: right;
+      height:100%;
+
+      @include respond-below(sm){
+        display: none;
+      }
+    }
+
+    .#{$ns}-image-sm{
+      display: none;
+
+      @include respond-below(sm){
+        display: block;
+        width: 100%;
+      }
+    }
+  }
+
+  .#{$ns}-introductory-content{
+    position: relative;
+    width:72%;
+    z-index: 4;
+    padding: 10px 0 0 17px;
+
+    @include respond-below(md){
+      width:63%;
+    }
+    @include respond-below(sm){
+      width:100%;
+      text-align: center;
+      padding: 40px 0 0;
+      position: relative;
+      top: 0;
+    }
+  }
+
+  .#{$ns}-list{
+    margin: 14px 0 0 18px;
+    list-style-type: disc;
+    list-style-position: outside;
+    width: calc(100% - 16px);
+
+    margin-bottom: 20px;
+    text-align: left;
+
+    .super-script{
+      font-size: 10px;
+      display: inline-block;
+      top: -4px;
+      left: 0;
+      position: relative;
+    }
+
+    li{
+      margin-bottom: 15px;
+
+      &:last-child{
+        margin-bottom: 0;
+      }
+    }
+  }
+
+  .#{$ns}-sub-title
+  {
+    font-size: 24px;
+    margin-bottom: 20px;
+    color:$color-primary-title;
+
+    @include respond-below(sm){
+      margin-bottom: 25px;
+    }
+  }
+
+  .#{$ns}-primary-title{
+    font-weight: bold;
+    font-size: 40px;
+    color: $color-primary-title;
+    margin-bottom: 20px;
+  }
+
+  .#{$ns}-heading{
+    font-size: 18px;
+    margin-bottom: 15px;
+  }
+
+  .#{$ns}-knowledge-quiz{
+    font-size: 18px;
+    margin-bottom: 20px;
+
+    @include respond-below(sm){
+      margin-bottom: 25px;
+    }
+  }
+
+  .#{$ns}-rank-compare{
+    font-size: 24px;
+    margin-bottom: 20px;
+
+    @include respond-below(sm){
+      margin-bottom: 25px;
+    }
+  }
+
+  .#{$ns}-button-secondary{
+    min-width: 203px;
+  }
+
+  .#{$ns}-references{
+    margin-top:30px;
+    font-family: "Arial Narrow", Arial, serif;
+    font-size:12px;
+    line-height: 15px;
+    text-align: center;
+
+    @include respond-below(sm)
+    {
+      margin-top:40px;
+    }
+
+    strong {
+      font-weight: bold;
+    }
+  }
+}

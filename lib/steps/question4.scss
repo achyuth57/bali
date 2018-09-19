@@ -1,0 +1,142 @@
+$ns: question4;
+
+.#{$ns} {
+  .#{$ns}-logo{
+    margin-bottom:20px;
+    height:60px;
+  }
+   .question-header {
+     .question-header-question
+     {
+       .super-script{
+         font-size: 17px;
+         display: inline-block;
+         top: -9px;
+         left: 0px;
+         position: relative;
+       }
+     }
+
+   }
+  .question-header-description{
+    .sub-script{
+      font-size: 10px;
+      display: inline-block;
+      bottom: -4px;
+      position: relative;
+    }
+
+    .super-script{
+      font-size: 10px;
+      display: inline-block;
+      top: -4px;
+      left: 0;
+      position: relative;
+    }
+  }
+  .#{$ns}-header-answer{
+    font-size:15px;
+    line-height: 18px;
+    text-align: center;
+    margin-bottom: 30px;
+    p{
+      padding-bottom:10px;
+    }
+
+    .super-script{
+      font-size: 10px;
+      display: inline-block;
+      top: -4px;
+      left: 0;
+      position: relative;
+    }
+
+
+
+    @include respond-below(sm){
+      margin-bottom: 20px;
+    }
+  }
+
+  .#{$ns}-answer{
+    font-size:15px;
+    line-height: 18px;
+    text-align: center;
+    //font-weight: bold;
+    //text-align: center;
+
+    p{
+      padding-bottom:10px;
+    }
+    div.points{
+      ul{
+        list-style: circle;
+        display: inline-block;
+        text-align: left;
+        li{
+
+        }
+      }
+      padding-bottom:10px;
+      padding-left:18px;
+    }
+
+    .#{$ns}-image {
+      width:50%;
+      @include respond-below(sm){
+        width:100%;
+      }
+    }
+
+    .sub-script{
+      font-size: 10px;
+      display: inline-block;
+      bottom: -4px;
+      position: relative;
+    }
+
+    .super-script{
+      font-size: 10px;
+      display: inline-block;
+      top: -4px;
+      left: 0;
+      position: relative;
+    }
+
+    .smaller-text{
+      font-size:14px;
+      font-family: "Arial Narrow", Arial, serif;
+    }
+  }
+  .#{$ns}-references{
+    margin-top:30px;
+    font-family: "Arial Narrow", Arial, serif;
+    font-size:12px;
+    line-height: 15px;
+    text-align: center;
+
+    @include respond-below(sm)
+    {
+      margin-top:20px;
+    }
+
+    strong {
+      font-weight: bold;
+    }
+  }
+
+  .product-info{
+    margin-top: 30px;
+    text-align: center;
+    font-size: 15px;
+    line-height: 18px;
+
+    @include respond-below(sm)
+    {
+      margin-top: 20px;
+    }
+    .highlight{
+      color: $color-button-primary;
+    }
+  }
+}

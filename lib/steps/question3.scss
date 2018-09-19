@@ -1,4 +1,4 @@
-$ns: question1;
+$ns: question3;
 
 .#{$ns} {
 
@@ -8,10 +8,10 @@ $ns: question1;
     text-align: center;
     margin-bottom: 30px;
 
-    .super-script{
+    .sub-script{
       font-size: 10px;
       display: inline-block;
-      top: -4px;
+      bottom: -4px;
       position: relative;
     }
 
@@ -19,8 +19,17 @@ $ns: question1;
       margin-bottom: 20px;
     }
   }
+  .#{$ns}-answer-title
+  {
+    margin-bottom:20px;
+    font-size:15px;
+    line-height: 18px;
+    //font-weight: bold;
+    text-align: center;
+  }
 
   .#{$ns}-answer{
+    margin-top:20px;
     font-size:15px;
     line-height: 18px;
     //font-weight: bold;
@@ -43,11 +52,6 @@ $ns: question1;
       top: -4px;
       left: 0;
       position: relative;
-    }
-
-    .smaller-text{
-      font-size:14px;
-      font-family: "Arial Narrow", Arial, serif;
     }
   }
   .#{$ns}-references{

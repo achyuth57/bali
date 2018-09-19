@@ -1,0 +1,304 @@
+@import "../sass/variables";
+
+$ns: step11;
+
+.#{$ns}{
+
+  .#{$ns}-title{
+    font-size: 18px;
+    font-weight: bold;
+    margin: 33px 0 24px;
+    text-align: center;
+
+    @include respond-below(sm){
+      margin: 23px 0 20px;
+    }
+
+    span{
+      font-size: 11px;
+      position: relative;
+      top: -7px;
+    }
+  }
+
+  .#{$ns}-vaccination-types{
+    padding: 0 20%;
+    font-size: 12px;
+    font-style: italic;
+
+    @include respond-below(sm){
+      padding: 0;
+    }
+
+    > div {
+      float: left;
+      width: 33.33%;
+      height: 65px;
+      position: relative;
+
+      @include respond-below(sm) {
+        width: 50%;
+      }
+
+      img {
+        width: auto;
+        max-width: 100%;
+        display: block;
+      }
+
+      &.#{$ns}-rabipur {
+        padding-right: 30px;
+        margin-bottom: 20px;
+
+        @include respond-below(sm){
+          padding-right: 0;
+          margin-bottom: 10px;
+        }
+
+        img {
+          display: block;
+          max-height: 43px;
+          @include transform(translateZ(0));
+
+          @include respond-below(sm){
+            margin: 0 auto;
+          }
+        }
+      }
+
+      &.#{$ns}-twinrix {
+        padding-right: 30px;
+        margin-bottom: 20px;
+
+        @include respond-below(sm){
+          padding-right: 0;
+          margin-bottom: 10px;
+        }
+
+        a img{
+          display: block;
+          margin-top: 8px;
+          max-height: 33px;
+          @include transform(translateZ(0));
+
+          @include respond-below(sm){
+            padding-left:15px;
+            position: absolute;
+            margin: 12px auto auto;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+          }
+        }
+      }
+
+      &.#{$ns}-typherix {
+        margin-bottom: 20px;
+
+        @include respond-below(sm){
+          margin-bottom: 30px;
+        }
+
+        img{
+          display: block;
+          max-height: 33px;
+          margin-top: 8px;
+          @include transform(translateZ(0));
+
+          @include respond-below(sm){
+            padding-right: 20px;
+            position: absolute;
+            margin: 12px auto auto;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+          }
+        }
+      }
+
+      &.#{$ns}-encephalitis{
+        text-align: center;
+        padding-right: 30px;
+
+        @include respond-below(sm){
+          padding-top: 12px;
+          padding-right: 0;
+          margin-bottom: 30px;
+          br{
+            display: none;
+          }
+        }
+
+        .#{$ns}-virus-title{
+          font-size: 18px;
+          font-style: normal;
+          font-weight: bold;
+          margin-bottom: 20px;
+          color: $color-text-dark;
+        }
+      }
+
+      &.#{$ns}-malarone{
+
+        @include respond-below(sm){
+          text-align: center;
+
+          >div:first-child{
+            margin-bottom: 10px;
+          }
+        }
+
+        img{
+          max-height: 36px;
+          margin-bottom: 9px;
+
+          @include respond-below(sm){
+            margin: 0 auto;
+          }
+        }
+
+        >div:last-child{
+          padding-left: 15px;
+          margin-top: 23px;
+
+          @include respond-below(sm){
+            padding-left: 0;
+          }
+        }
+      }
+    }
+  }
+
+  .#{$ns}-main-information{
+    text-align: center;
+    font-size: 15px;
+    margin-top: 15px;
+
+    @include respond-below(sm){
+      margin-top: 33px;
+
+      br{
+        display: none;
+      }
+    }
+
+    @include respond-below(xs){
+      margin-top: 25px;
+    }
+
+    >div >div{
+      margin-bottom: 14px;
+
+      &:last-child{
+        margin-bottom: 32px;
+
+        @include respond-below(sm){
+          margin-bottom: 40px;
+        }
+      }
+
+      .super-script{
+        font-size: 10px;
+        position: relative;
+        top: -4px;
+      }
+    }
+  }
+
+  .#{$ns}-references{
+    font-size: 12px;
+    text-align: center;
+    font-family: "Arial Narrow", Arial, serif;
+    margin-bottom: 30px;
+
+    .break-word{
+      word-break: break-all;
+    }
+
+    strong{
+      font-weight: bold;
+    }
+  }
+
+  .#{$ns}-compare{
+    font-size: 24px;
+    margin-top: 35px;
+    text-align: center;
+
+    @include respond-below(sm){
+      margin-top: 30px;
+    }
+  }
+
+  .#{$ns}-button-secondary{
+    margin: 15px auto 15px;
+    display: block;
+    min-width: 221px;
+
+    @include respond-below(xs){
+      margin: 23px auto 14px;
+    }
+  }
+
+  .#{$ns}-pbs-information{
+    margin: 0 -20px -20px;
+    padding: 46px 47px 0;
+    background: $color-pbs-background;
+    text-align: center;
+
+    @include respond-below(sm){
+      padding: 20px 5px;
+    }
+
+    .#{$ns}-pbs-info-box{
+      width: 100%;
+      font-size: 18px;
+      border: 1px solid $color-border-primary;
+      margin-bottom: 35px;
+      padding: 15px;
+
+      @include respond-below(sm){
+        margin-bottom: 25px;
+      }
+
+      >div {
+        height: 100%;
+        > div {
+          position: relative;
+
+          strong {
+            font-weight: bold;
+          }
+        }
+      }
+    }
+
+    .#{$ns}-please-review{
+        font-size: 24px;
+        margin-bottom: 42px;
+        font-family: "Arial Narrow", Arial, serif;
+
+      @include respond-below(sm){
+        margin-bottom: 17px;
+        padding: 0 20px;
+      }
+    }
+
+    .#{$ns}-company-details{
+        font-size: 15px;
+
+      sup.ref {
+        font-size: 10px;
+        position: relative;
+        top: -4px;
+      }
+
+      @include respond-below(sm){
+        padding: 0 20px;
+      }
+    }
+  }
+}
+

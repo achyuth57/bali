@@ -1,33 +1,43 @@
-$ns: question1;
+$ns: question2;
 
 .#{$ns} {
 
-  .#{$ns}-header-answer{
-    font-size:15px;
-    line-height: 18px;
+  .#{$ns}-note {
+    font-family: "Arial Narrow", Arial, serif;
+    font-size:12px;
     text-align: center;
-    margin-bottom: 30px;
+    margin-top:30px;
 
-    .super-script{
-      font-size: 10px;
-      display: inline-block;
-      top: -4px;
-      position: relative;
-    }
-
-    @include respond-below(sm){
-      margin-bottom: 20px;
+    @include respond-below(sm)
+    {
+      margin-top:20px;
     }
   }
 
-  .#{$ns}-answer{
+  .#{$ns}-answers {
+    border-bottom:1px $color-border-primary solid;
     font-size:15px;
     line-height: 18px;
-    //font-weight: bold;
     text-align: center;
+    padding-bottom: 30px;
 
-    p{
-      padding-bottom:10px;
+    .button {
+      margin-top:15px;
+
+      @include respond-below(sm)
+      {
+        margin-top:5px;
+      }
+    }
+
+
+    @include respond-below(sm)
+    {
+      padding-bottom: 20px;
+    }
+
+    div{
+      margin-bottom: 15px;
     }
 
     .sub-script{
@@ -37,6 +47,10 @@ $ns: question1;
       position: relative;
     }
 
+    .underline{
+      text-decoration: underline;
+    }
+
     .super-script{
       font-size: 10px;
       display: inline-block;
@@ -44,12 +58,8 @@ $ns: question1;
       left: 0;
       position: relative;
     }
-
-    .smaller-text{
-      font-size:14px;
-      font-family: "Arial Narrow", Arial, serif;
-    }
   }
+
   .#{$ns}-references{
     margin-top:30px;
     font-family: "Arial Narrow", Arial, serif;
