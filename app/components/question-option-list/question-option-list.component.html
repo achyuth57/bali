@@ -1,0 +1,60 @@
+<div class="question-options-list mode-{{mode}}" [ngSwitch]="columns">
+
+  <div class="row" *ngSwitchCase="1">
+    <div class="col-sm-12">
+      <div *ngFor="let option of options; let i = index;" class="question-options-list-item">
+        <question-option [number]="option.number" [title]="option.title"
+                         [selected]="option.selected" [readOnly]="readOnly" [icon]="option.icon"
+                         [mode]="mode"
+                         (onToggle)="onQuestionOptionToggled($event)"></question-option>
+      </div>
+    </div>
+  </div>
+
+  <div class="row" *ngSwitchCase="2">
+    <div class="col-sm-6 question-options-list-left">
+      <div *ngFor="let option of options | slice:0:Math.ceil(options.length/2);" class="question-options-list-item">
+        <question-option [number]="option.number" [title]="option.title"
+                         [selected]="option.selected" [readOnly]="readOnly" [icon]="option.icon"
+                         [mode]="mode"
+                         (onToggle)="onQuestionOptionToggled($event)"></question-option>
+      </div>
+    </div>
+    <div class="col-sm-6 question-options-list-right">
+      <div *ngFor="let option of options| slice:Math.ceil(options.length/2):options.length;" class="question-options-list-item">
+        <question-option [number]="option.number" [title]="option.title"
+                         [selected]="option.selected" [readOnly]="readOnly" [icon]="option.icon"
+                         [mode]="mode"
+                         (onToggle)="onQuestionOptionToggled($event)"></question-option>
+      </div>
+    </div>
+  </div>
+
+  <div class="row" *ngSwitchCase="3">
+    <div class="col-xxs-4 question-options-list-left">
+      <div *ngFor="let option of options | slice:0:Math.ceil(options.length/3);" class="question-options-list-item">
+        <question-option [number]="option.number" [title]="option.title"
+                         [selected]="option.selected" [readOnly]="readOnly" [icon]="option.icon"
+                         [mode]="mode"
+                         (onToggle)="onQuestionOptionToggled($event)"></question-option>
+      </div>
+    </div>
+    <div class="col-xxs-4 question-options-list-center">
+      <div *ngFor="let option of options| slice:Math.ceil(options.length/3):Math.ceil((options.length/3)*2);" class="question-options-list-item">
+        <question-option [number]="option.number" [title]="option.title"
+                         [selected]="option.selected" [readOnly]="readOnly" [icon]="option.icon"
+                         [mode]="mode"
+                         (onToggle)="onQuestionOptionToggled($event)"></question-option>
+      </div>
+    </div>
+    <div class="col-xxs-4 question-options-list-right">
+      <div *ngFor="let option of options| slice:Math.ceil((options.length/3)*2):options.length;" class="question-options-list-item">
+        <question-option [number]="option.number" [title]="option.title"
+                         [selected]="option.selected" [readOnly]="readOnly" [icon]="option.icon"
+                         [mode]="mode"
+                         (onToggle)="onQuestionOptionToggled($event)"></question-option>
+      </div>
+    </div>
+  </div>
+
+</div>

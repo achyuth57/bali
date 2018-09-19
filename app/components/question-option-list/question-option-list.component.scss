@@ -1,0 +1,21 @@
+@import "../../../lib/sass/_variables";
+@import "../../../lib/sass/_helpers";
+
+$ns: question-options-list;
+
+.#{$ns} {
+
+  &.mode-listItem{
+    .#{$ns}-item {
+      margin-bottom: 20px;
+    }
+  }
+
+  .#{$ns}-item{
+    margin-bottom:6px;
+
+    &:last-child{
+      margin-bottom: 0;
+    }
+  }
+}
