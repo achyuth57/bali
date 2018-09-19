@@ -1,0 +1,512 @@
+<wizard>
+    <simple-step #step1>
+        <div class="step1">
+            <div class="row">
+                <div class="step1-introductory-content">
+                    <div class="row">
+                        <div class="col-xs-12">
+                            <div class="step1-primary-title">Bali</div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-xs-12">
+                            <div class="step1-heading">
+                                The Robertson Family are escaping the Australian winter with a 7-day trip to Bali. They will be staying in Kuta but plan to take a day trip to Ubud to visit the famous Monkey Forest.
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-xs-12">
+                            <div class="step1-knowledge-quiz">
+                                Test your knowledge in this two-minute quiz.
+                            </div>
+                            <div class="step1-rank-compare">
+                                How do you think you’ll rank compared to your peers?
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-xs-12">
+                            <button class="button button-secondary step1-button-secondary" (click)="step1.next();">
+                                Take off here
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <div class="step1-image-wrapper">
+                    <img class="step1-image-lg" src="assets/img/bali-side-fade.png" />
+                    <img class="step1-image-sm" src="assets/img/bali-top-fade.png" />
+                </div>
+            </div>
+        </div>
+    </simple-step>
+    <question-step #question1 [options]="questions.question1" [allCorrectRequired]="true">
+        <div class="question question1">
+            <div class="question-header">
+                <div *ngIf="!question1.questionCompleted">
+                    <div class="question-header-left">
+                        <span class="question-header-number ">
+                            Q1:
+                        </span>
+                    </div>
+                    <div class="question-header-right">
+                        <span class="question-header-question">
+                           Which of the following are amongst the vaccine-preventable diseases endemic in Indonesia?
+                        </span>
+                    </div>
+                </div>
+                <div *ngIf="question1.questionCompleted">
+                    <div class="question-header-result">
+                        {{question1.correctlyAnswered?"That's correct.":"That's incorrect."}}
+                    </div>
+                    <div class="question-answer-title" *ngIf="!question1.correctlyAnswered">The correct answer is:</div>
+                    <div class="question1-header-answer">
+                        Rabies, hepatitis B and hepatitis A.<div class="super-script">1,2</div>
+                    </div>
+                </div>
+            </div>
+            <div class="question-content">
+                <div class="question1-answer" *ngIf="question1.questionCompleted">
+                    <p>
+                        Both hepatitis B and A are endemic in Indonesia and both are vaccine-preventable diseases. Authorities (AIH, CDC and WHO) recommend that non-immune travellers should be vaccinated against both diseases when travelling to Indonesia.<span class="super-script">1-4</span>
+                    </p>
+                    <p>
+                        Rabies is another disease that is endemic in Indonesia, with authorities (AIH, CDC and WHO) recommending pre-exposure (PreP) rabies vaccination for travellers with an increased risk of exposure to animals in countries like Indonesia. Children are especially vulnerable, because they tend to play with animals, might not report bites, and are more likely to have animal bites around the head and neck.<span class="super-script">2-4</span> When the clinical symptoms of rabies appear, the disease is fatal with very few exceptions.<span class="super-script">2,3</span>
+                    </p>
+                    <p>
+                        So, the Robertson family should also be vaccinated against rabies before travelling.<span class="super-script">1-4</span>
+                    </p>
+                    <p class="smaller-text">
+                        AIH, Australian Immunisation Handbook; CDC, Centers for Disease Control and Prevention; WHO, World Health Organization.
+                    </p>
+                </div>
+                <div class="question-content-question-list">
+                    <div *ngIf="!question1.questionCompleted">
+                        <question-option-list [options]="question1.options"
+                                              columns="1" [multiSelect]="true" [maxSelection]="5"
+                                              [readOnly]="question1.questionCompleted" mode="listItem">
+                        </question-option-list>
+                        <button class="button button-secondary question-content-button-next" (click)="question1.onSubmit(0)">
+                            Submit
+                        </button>
+                    </div>
+
+                    <button *ngIf="question1.questionCompleted" class="button button-secondary question-content-button-next" (click)="question1.next();">
+                        Next
+                    </button>
+                </div>
+            </div>
+            <div *ngIf="question1.questionCompleted" class="question1-references">
+                <strong>References: 1</strong>.
+                Centers for Disease Control and Prevention. Health Information for Travelers to Indonesia. <external-link title="Travelers to Indonesia" url="https://wwwnc.cdc.gov/travel/destinations/traveler/none/indonesia"><span class="break-word">https://wwwnc.cdc.gov/travel/destinations/traveler/none/indonesia</span></external-link>. Accessed March 2017.
+                <strong>2</strong>. Australian Technical Advisory Group on Immunisation. The Australian immunisation handbook 10th ed (2017 update). Canberra: Australian Government Department of Health, 2017.
+                <strong>3</strong>. The World Health Organization (WHO). International travel and health. Situation as on 1 January 2012.
+                <strong>4</strong>. Centers for Disease Control and Prevention Yellow Book 2016. Chapter 3. Rabies. <external-link title="Rabies" url="http://wwwnc.cdc.gov/travel/yellowbook/2016/infectious-diseases-related-to-travel/rabies"><span class="break-word">http://wwwnc.cdc.gov/travel/yellowbook/2016/infectious-diseases-related-to-travel/rabies</span></external-link>. Accessed March 2017.
+            </div>
+        </div>
+    </question-step>
+    <question-step #question2 [options]="questions.question2" [showQuestions]="false">
+        <div class="question question2">
+            <div class="question-header ">
+                <div *ngIf="!question2.questionCompleted">
+                    <div class="question-header-left">
+                        <span class="question-header-number ">
+                        Q2:
+                        </span>
+                    </div>
+                    <div class="question-header-right">
+                        <span class="question-header-question">
+                           Which of the animals and insects below can transmit rabies?
+                        </span>
+                        <span class="question-header-description">
+                        Identify the 5 correct options before the clock runs out.
+                        </span>
+                        <span class="question-header-description">
+                        Earn 1 point for every correct answer, and 1 point for every second remaining after completed correctly.
+                        </span>
+                    </div>
+                </div>
+                <div *ngIf="question2.questionCompleted">
+                    <div class="question-header-result">
+                        You got {{question2.answeredCorrectly}} out of {{question2.totalCorrectAnswers}} correct!
+                    </div>
+                    <div class="question-answer-title" *ngIf="!question2.correctlyAnswered">The correct answer is:</div>
+                </div>
+            </div>
+            <div class="question-content">
+                <div class="question-content-question-timer" *ngIf="!question2.questionCompleted">
+                    <question-timer [startTime]="10000" (onStart)="question2.showQuestions = true"
+                                    (onStop)="question2.onSubmit($event)">
+                    </question-timer>
+                </div>
+                <div class="question-content-question-grid" *ngIf="question2.showQuestions">
+                    <question-option-list [options]="question2.options"
+                                          columns="3" [multiSelect]="true" maxSelection="5"
+                                          [readOnly]="question2.questionCompleted" mode="iconSquare">
+                    </question-option-list>
+                </div>
+            </div>
+            <div *ngIf="question2.questionCompleted">
+                <div class="question2-answers">
+                    <div>
+                        All mammals, such as dogs, cats, monkeys, foxes and bats can be infected with the rabies virus and can transmit the virus to humans.<span class="super-script">1-3</span>
+                    </div>
+                    <div>
+                        The Australian Immunisation Handbook recommends pre-exposure vaccination for travellers to rabies endemic destinations whose itinerary increases the likelihood of coming into contact with animals.<span class="super-script">4</span>
+                    </div>
+                    <button *ngIf="question2.questionCompleted"
+                            class="button button-secondary question-content-button-next" (click)="question2.next();">
+                        Next
+                    </button>
+                </div>
+                <div class="question2-references">
+                    <strong>References: 1</strong>. Centers for Disease Control and Prevention. Yellow Book. Chapter 3 Infectious Diseases Related to Travel: Rabies. <external-link title="Rabies" url="https://wwwnc.cdc.gov/travel/yellowbook/2016/infectious-diseases-related-to-travel/rabies"><span class="break-word">https://wwwnc.cdc.gov/travel/yellowbook/2016/infectious-diseases-related-to-travel/rabies</span></external-link>. Accessed March 2017.
+                    <strong>2</strong>. World Health Organization. Rabies. <external-link title="World Health Organization Rabies" url="http://www.who.int/mediacentre/factsheets/fs099/en/"><span class="break-word">http://www.who.int/mediacentre/factsheets/fs099/en/</span></external-link>. Accessed March 2017.
+                    <strong>3</strong>. Centers for Disease Control and Prevention. Other Wild Animals. <external-link title="Other Wild Animals" url="https://www.cdc.gov/rabies/exposure/animals/other.html"><span class="break-word">https://www.cdc.gov/rabies/exposure/animals/other.html</span></external-link>. Accessed March 2017.
+                    <strong>4</strong>. Australian Technical Advisory Group on Immunisation. The Australian immunisation handbook 10th ed (2017 update). Canberra: Australian Government Department of Health, 2017.
+                </div>
+            </div>
+        </div>
+    </question-step>
+    <question-step #question3 [options]="questions.question3">
+        <div class="question question3">
+            <div class="question-header">
+                <div *ngIf="!question3.questionCompleted">
+                    <div class="question-header-left">
+                        <span class="question-header-number ">
+                            Q3:
+                        </span>
+                    </div>
+                    <div class="question-header-right">
+                        <span class="question-header-question">
+                            Which of the following statements is <span class="underline">false</span>?
+                        </span>
+                    </div>
+                </div>
+                <div *ngIf="question3.questionCompleted">
+                    <div class="question-header-result">
+                        {{question3.correctlyAnswered?"That's correct.":"That's incorrect."}}
+                    </div>
+                    <div class="question-answer-title" *ngIf="!question3.correctlyAnswered">The correct answer is:</div>
+                    <div class="question3-header-answer">
+                        The false statement is "Rabies immunoglobulin is readily accessible in developing countries."
+                    </div>
+                </div>
+            </div>
+            <div class="question-content">
+                <div class="question-content-question-list" *ngIf="!question3.questionCompleted">
+                    <div>
+                        <question-option-list [options]="question3.options"
+                                              columns="1" [multiSelect]="false"
+                                              [readOnly]="question3.questionCompleted" mode="listItem">
+                        </question-option-list>
+                        <button class="button button-secondary question-content-button-next" (click)="question3.onSubmit(0)" *ngIf="!question3.questionCompleted">
+                            Submit
+                        </button>
+                    </div>
+
+                </div>
+                <div class="question3-answer" *ngIf="question3.questionCompleted">
+                    <p>
+                        Rabies vaccine and rabies immunoglobulin (RIG) is often difficult to access in developing countries. All travellers should be informed that a worldwide shortage of RIG means that it may not be readily available at their destination and that safety may not be guaranteed.<span class="super-script">1-3</span> Travellers to rabies at-risk regions may be required to travel to an alternative destination in order to access appropriate post-exposure treatment.<span class="super-script">2</span>
+                    </p>
+                    <p>
+                        Travellers should also be educated to avoid animal exposure. Following potential exposure to rabies, travellers should immediately wash all animal bites, licks, and scratches with soap and water and seek medical care as soon as <span class="no-break-word">possible.<span class="super-script">1-3</span></span>
+                    </p>
+
+                    <button *ngIf="question3.questionCompleted" class="button button-secondary question-content-button-next" (click)="question3.next();">
+                        Next
+                    </button>
+                </div>
+            </div>
+            <div *ngIf="question3.questionCompleted" class="question3-references">
+                <strong>References: 1</strong>. Australian Technical Advisory Group on Immunisation. The Australian immunisation handbook 10th ed (2017 update). Canberra: Australian Government Department of Health, 2017.
+                <strong>2</strong>. Centers for Disease Control and Prevention. Yellow Book. Chapter 3 Infectious Diseases Related to Travel: Rabies. <external-link title="Rabies" url="https://wwwnc.cdc.gov/travel/yellowbook/2016/infectious-diseases-related-to-travel/rabies"><span class="break-word">https://wwwnc.cdc.gov/travel/yellowbook/2016/infectious-diseases-related-to-travel/rabies</span></external-link>. Accessed March 2017.
+                <strong>3</strong>. World Health Organization (WHO) International Travel and Health 2012. Updated 2014. <external-link title="World Health Organization" url="http://www.who.int/ith/en/"><span class="break-word">http://www.who.int/ith/en/</span></external-link>. Accessed March 2017.
+            </div>
+        </div>
+    </question-step>
+    <question-step #question4 [options]="questions.question4">
+        <div class="question question4">
+            <div class="question-header">
+                <img src="assets/img/Rabipur-large-logo.png" class="question4-logo"/>
+                <div *ngIf="!question4.questionCompleted">
+                    <div class="question-header-left">
+                        <span class="question-header-number ">
+                            Q4:
+                        </span>
+                    </div>
+                    <div class="question-header-right">
+                        <span class="question-header-question">
+                            RABIPUR<span class="super-script">®</span> offers a pre-exposure prophylaxis (PreP) schedule that is the shortest for any rabies vaccine in <span class="no-break-word">Australia<span class="super-script">*1,2</span></span>
+                            <br/>
+                            How quickly can the RABIPUR<span class="super-script">®</span> PreP schedule be completed?
+                        </span>
+                        <span class="question-header-description">
+                            <span class="super-script">*</span>PreP does not eliminate the need for urgent medical care following possible rabies <span class="no-break-word">exposure.<span class="super-script">3-5</span></span>
+                        </span>
+                    </div>
+                </div>
+                <div *ngIf="question4.questionCompleted">
+                    <div class="question-header-result">
+                        {{question4.correctlyAnswered?"That's correct.":"That's incorrect."}}
+                    </div>
+                    <div class="question-answer-title" *ngIf="!question4.correctlyAnswered">The correct answer is:</div>
+                    <div class="question4-header-answer">
+                        <p>
+                            It’s within 21 days.<span class="super-script">1</span>
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="question-content">
+                <div class="question4-answer" *ngIf="question4.questionCompleted">
+                    <p>
+                        RABIPUR offers two PreP schedules:
+                    </p>
+                    <div class="points">
+                        <ul>
+                            <li>Day 0, 7 and 21 or</li>
+                            <li>Day 0, 7 and 28</li>
+                        </ul>
+                    </div>
+                    <p>
+                        <strong>PreP vaccination:<span class="super-script">#</span></strong>
+                    </p>
+                    <div class="points">
+                        <ul>
+                            <li>Simplifies post-exposure prophylaxis (PEP)<span class="super-script">1</span>. Individuals previously fully immunised require 2 doses of Rabipur given at <span class="no-break-word">days 0 and 3.<span class="super-script">1</span></span></li>
+                            <li>Eliminates the need for post-exposure RIG,<span class="super-script">1</span> which is often difficult to access in developing countries.<span class="super-script">4-6</span></li>
+                        </ul>
+                    </div>
+                    <p class="smaller-text">
+                        <span class="super-script">#</span>PreP does not eliminate the need for immediate wound management and medical attention.
+                    </p>
+                    <p style="text-align: center">
+                        <img class="question4-image" src="assets/img/dosing.png">
+                    </p>
+                    <p>
+                        <span class="super-script">*</span>When administered according to the recommended immunisation schedule (days 0, 7, 21 or 28), 100% of subjects attained an adequate titre of 0.5 IU/mL by day 28 or earlier.<span class="super-script">1</span>
+                        There is no specific level of RVNA that is recognised as being ‘protective’ against rabies in humans. The World Health Organization (WHO) recommends a specific antibody level of 0.5 IU/mL as indicative of adequate immune response after vaccination.<span class="super-script">1,2</span>
+                    </p>
+                </div>
+                <div class="question-content-question-list">
+                    <div *ngIf="!question4.questionCompleted">
+                        <question-option-list [options]="question4.options"
+                                              columns="1" [multiSelect]="false"
+                                              [readOnly]="question4.questionCompleted" mode="listItem">
+                        </question-option-list>
+                        <button class="button button-secondary question-content-button-next" (click)="question4.onSubmit(0)">
+                            Submit
+                        </button>
+                    </div>
+
+                    <button *ngIf="question4.questionCompleted" class="button button-secondary question-content-button-next" (click)="question4.next();">
+                        Next
+                    </button>
+                    <div class="product-info">
+                        <strong>To view the full RABIPUR Product Information click <a class="highlight" title="To view the full RABIPUR Product Information click" href="https://au.gsk.com/media/289417/rabipur_pi_001_approved.pdf" target="_blank">here</a></strong>
+                    </div>
+                </div>
+            </div>
+            <div class="question4-references">
+                <strong>References: 1</strong>. RABIPUR Approved Product Information.
+                <span *ngIf="!question4.questionCompleted">
+                    <strong>2</strong>. Merieux Inactivated Rabies Vaccine Product Information.
+                    <strong>3</strong>. Centers for Disease Control and Prevention. Yellow Book. Chapter 3 Infectious Diseases Related to Travel: Rabies. <external-link title="Rabies" url="https://wwwnc.cdc.gov/travel/yellowbook/2016/infectious-diseases-related-to-travel/rabies"><span class="break-word">https://wwwnc.cdc.gov/travel/yellowbook/2016/infectious-diseases-related-to-travel/rabies</span></external-link>. Accessed March 2017.
+                    <strong>4</strong>. Australian Technical Advisory Group on Immunisation. The Australian immunisation handbook 10th ed (2017 update). Canberra: Australian Government Department of Health, 2017.
+                    <strong>5</strong>. World Health Organization (WHO) International Travel and Health 2012. Updated 2014. <external-link title="World Health Organization" url="http://www.who.int/ith/en/"><span class="break-word">http://www.who.int/ith/en/</span></external-link>. Accessed March 2017.
+                </span>
+                <span *ngIf="question4.questionCompleted">
+                    <strong>2</strong>. Briggs DJ et al. Purified Chick Embryo Cell Culture Rabies Vaccine: interchangeability with Human Diploid Cell Culture Rabies Vaccine and comparison of one versus two-dose post-exposure booster regimen for previously immunized persons. Vaccine. 2001;19:1055-60.
+                    <strong>3</strong>. World Health Organization. Rabies vaccine. WHO position paper. Wkly Epidemiol Rec. 2010;85:309-20.
+                    <strong>4</strong>. Centers for Disease Control and Prevention (CDC) Yellow Book 2016. Chapter 3. Rabies. <external-link title="World Health Organization" url="http://wwwnc.cdc.gov/travel/yellowbook/2016/infectious-diseases-related-to-travel/rabies"><span class="break-word">http://wwwnc.cdc.gov/travel/yellowbook/2016/infectious-diseases-related-to-travel/rabies</span></external-link>. Accessed March 2017.
+                    <strong>5</strong>. Australian Technical Advisory Group on Immunisation. The Australian immunisation handbook 10th ed (2017 update). Canberra: Australian Government Department of Health, 2017.
+                    <strong>6</strong>. World Health Organization (WHO) International Travel and Health 2012. Updated 2014. <external-link title="World Health Organization" url="http://www.who.int/ith/vaccines/en/"><span class="break-word">http://www.who.int/ith/vaccines/en/</span></external-link>. Accessed March 2017.
+                </span>
+            </div>
+        </div>
+    </question-step>
+    <simple-step #step10>
+        <div class="step10">
+            <div class="step10-display-col">
+                <div class="row">
+                    <img class="step10-logo" src="assets/img/Rabipur-large-logo-2.png" />
+                </div>
+                <div class="row">
+                    <img class="step10-box" src="assets/img/Rabipur-pack-shot-1.png" >
+                </div>
+            </div>
+            <div class="step10-info-col">
+                <div class="step10-inner-content row">
+                    <div class="col-xs-12">
+                        <div class="row">
+                            <div class="col-xs-12">
+                                <div class="step10-title">Rabies Kills:<span class="super-script">1,2</span></div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="step10-provides-intro col-xs-12">
+                                <p>
+                                    When the clinical symptoms of rabies appear, the disease is fatal with very few <span class="no-break-word">exceptions.<span class="super-script">1,2</span></span>
+                                </p>
+                                <div>
+                                    For travellers to rabies endemic countries, RABIPUR:
+                                    <ul>
+                                        <li>Is indicated for pre- and post-exposure rabies prophylaxis.<span class="super-script">3</span></li>
+                                        <li>Helps protect travellers to Southeast Asia, and other rabies high-risk regions.<span class="super-script">3</span></li>
+                                        <li>Offers a flexible, convenient dosing schedule: 3 doses given at days 0,7 and 21 or 28.<span class="super-script">3</span></li>
+                                        <li>Is generally well tolerated: Common adverse events reported in clinical trials (>10%) were injection site reactions, localised lymphadenopathy, malaise, headache, dizziness and myalgia.<span class="super-script">3</span></li>
+                                    </ul>
+                                </div>
+                                <p class="product-info">
+                                    <strong>To view the full RABIPUR Product Information click <a class="highlight" title="To view the full RABIPUR Product Information click" href="https://au.gsk.com/media/289417/rabipur_pi_001_approved.pdf" target="_blank">here</a></strong>
+                                </p>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-xs-12">
+                                <button class="button button-secondary step10-button-secondary" (click)="step10.next();">
+                                    Next
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-xs-12">
+                <div class="row">
+                    <div class="step10-references">
+                        <strong>References: 1.</strong> World Health Organization. Rabies. <external-link title="factsheets" url="http://www.who.int/mediacentre/factsheets/fs099/en/">http://www.who.int/mediacentre/factsheets/fs099/en/</external-link>. Accessed March 2017.
+                        <strong>2</strong>. The Centers for Disease Control and Prevention (CDC) Yellow Book 2016. Chapter 3. Rabies. <external-link title="The Centers for Disease Control and Prevention" url="http://wwwnc.cdc.gov/travel/yellowbook/2016/infectious-diseases-related-to-travel/rabies">http://wwwnc.cdc.gov/travel/yellowbook/2016/infectious-diseases-related-to-travel/rabies</external-link>. Accessed March 2017.
+                        <strong>3</strong>. RABIPUR Approved Product Information.
+                    </div>
+                </div>
+            </div>
+        </div>
+    </simple-step>
+    <simple-step #step11>
+        <div class="step11">
+            <div class="row">
+                <div class="col-xs-12">
+                    <div class="step11-title">Travellers to Indonesia should be considered for the following vaccinations:<span>*1</span></div>
+                </div>
+            </div>
+            <div class="row step11-vaccination-types">
+                <div class="step11-rabipur">
+                    <a href="https://health.gsk.com.au/products/rabipur.html" target="_blank">
+                        <img src="assets/img/rabipur.png" />
+                    </a>
+                </div>
+                <div class="step11-twinrix">
+                    <a href="https://health.gsk.com.au/products/twinrix.html" target="_blank">
+                        <img src="assets/img/twinrix-logo.png" />
+                    </a>
+                </div>
+                <div class="step11-typherix">
+                    <a href="https://health.gsk.com.au/products/typherix.html" target="_blank">
+                        <img src="assets/img/typherix.png" />
+                    </a>
+                </div>
+                <div class="step11-encephalitis">
+                    <div class="step11-virus-title">
+                        Japanese encephalitis</div>
+                    <div>
+                        (Some travellers)
+                    </div>
+                </div>
+                <div class="step11-malarone">
+                    <div>
+                        <a href="https://health.gsk.com.au/products/malarone.html" target="_blank">
+                            <img src="assets/img/malarone.png" />
+                        </a>
+                    </div>
+                    <div>
+                        (Some travellers)
+                    </div>
+                </div>
+            </div>
+            <div class="row step11-compare">
+                <div class="col-xs-12">
+                    <div>See how you compared to your colleagues.</div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-xs-12">
+                    <button class="button button-secondary step11-button-secondary" (click)="step11.next();">
+                        View Leader Board
+                    </button>
+                </div>
+            </div>
+            <div class="row step11-main-information">
+                <div class="col-xs-12">
+                    <div>
+                        Travellers’ vaccination history should also be assessed to check they are up-to-date with <br/> routine vaccinations, such as pertussis,
+                        influenza and measles.<span class="super-script">2</span>
+                    </div>
+                    <div>
+                        *Note that vaccinations against other diseases, may be required specific to each traveller’s itinerary. <br/>
+                        Please refer to the AIH
+                        <external-link title="AIH" url="http://immunise.health.gov.au"><span class="highlight">(immunise.health.gov.au)</span></external-link>, CDC
+                        <external-link title="CDC" url="http://cdc.gov">
+                            <span class="highlight">(cdc.gov)</span>
+                        </external-link>
+                        and WHO
+                        <external-link title="WHO" url="http://who.int/en">
+                            <span class="highlight">(who.int/en)</span>
+                        </external-link>
+                        websites for up to date information on vaccine recommendations.
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-xs-12">
+                    <div class="step11-references">
+                        <strong>References: 1.</strong> Centers for Disease Control and Prevention (CDC). Health Information for Travelers to Indonesia. Clinician View.
+                        <external-link title="Travellers to Indonesia" url="https://wwwnc.cdc.gov/travel/destinations/traveler/none/indonesia">
+                            <span class="break-word">https://wwwnc.cdc.gov/travel/destinations/traveler/none/indonesia</span>
+                        </external-link>
+                        . Accessed March 2017.
+                        <strong>2.</strong> Australian Technical Advisory Group on Immunisation. The Australian immunisation handbook 10th ed (2017 update).
+                        Canberra: Australian Government Department of Health, 2017.
+                    </div>
+                </div>
+            </div>
+            <div class="step11-pbs-information row">
+                <div class="col-xs-12">
+                    <div class="row step11-pbs-info-box">
+                        <div class="col-xs-12">
+                            <div>
+                                <strong>PBS Information:</strong> Twinrix, Typherix, Rabipur are not listed on the National Immunisation Program (NIP) or the PBS.
+                                <br/>
+                                <br/>
+                                Malarone is not listed on the PBS for malaria prophylaxis. <strong>Authority required:</strong> Treatment of suspected or confirmed Plasmodium falciparum malaria in a patient aged 3 years or older when quinine containing regimens are inappropriate.
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row step11-please-review">
+                        <div class="col-xs-12">
+                            PLEASE REVIEW THE RABIPUR, TWINRIX, TYPHERIX AND MALARONE APPROVED PRODUCT INFORMATION BEFORE PRESCRIBING. PRODUCT INFORMATION IS AVAILABLE AT
+                            <a class="highlight" title="Please Review" href="http://au.gsk.com/en-au/products/our-prescription-medicines-and-vaccines/" target="_blank">
+                                au.gsk.com
+                            </a>
+                        </div>
+                    </div>
+                    <div class="row step11-company-details">
+                        <div class="col-xs-12">
+                            For information on GSK products or to report an adverse event involving a GSK product, please contact GSK Medical Information on 1800 033 109.
+                            GlaxoSmithKline Australia Pty Ltd. ABN 47 100 162 481.
+                            Trademarks are owned by or licensed to the GSK group of companies.
+                            © 2017 GSK group of companies or its licensor Melbourne VIC. AU/VAC/0007/17. Date of approval: August 2017. GSK0024.
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </simple-step>
+    <leaderboard-step #leaderboardStep>
+        <a class="button button-secondary" style="display: inline-block" title="Click Here" href="https://health.gsk.com.au/therapy_areas/vaccines/adult_travels.html" target="_blank">
+            Click Here
+        </a>
+    </leaderboard-step>
+</wizard>
