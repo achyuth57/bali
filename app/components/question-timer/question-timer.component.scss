@@ -1,0 +1,46 @@
+@import "../../../lib/sass/variables";
+@import "../../../lib/sass/helpers";
+
+$ns: question-timer;
+
+.#{$ns} {
+  text-align: center;
+  height: 42px;
+
+  .button{
+    top:-3px;
+    position: relative;
+  }
+
+  .timer {
+    height: 42px;
+    width:140px;
+    display: inline-block;
+    text-align: center;
+    border: 2px solid $color-question-timer-primary;
+    border-radius: 50px;
+    font-weight: bold;
+    font-size:24px;
+
+    background-color: $color-question-timer-primary;
+    color: $color-question-timer-secondary;
+    @include transition(color $transition-hover-duration, background-color $transition-hover-duration);
+
+    @include respond-below(sm){
+      width:130px;
+    }
+
+    &.counting {
+      background-color: $color-question-timer-secondary;
+      color: $color-question-timer-primary;
+    }
+  }
+
+  .start-button{
+    margin-right:10px;
+
+    @include respond-below(sm){
+      min-width:130px;
+    }
+  }
+}

@@ -1,0 +1,9 @@
+<div class="question-timer">
+  <button class="button button-secondary start-button" (click)="!isCounting?start():stop()">
+    {{!isCounting?"Start":"Submit"}}
+  </button>
+
+  <button class="timer" [ngClass]="{'counting':isCounting}">
+  {{timer}}
+</button>
+</div>
