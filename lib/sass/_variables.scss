@@ -1,0 +1,55 @@
+//breakpoint variables
+$break-extra-extra-small:320px;
+$break-extra-small: 480px;
+$break-small: 768px;
+$break-medium: 1024px;
+$break-large: 1200px;
+
+$color-background: #F0EFED;
+$color-page-border: #FFF;
+$color-wizard-divider: #50433d;
+
+$color-question-number: #F36633;
+$color-question-highlight: #F36633;
+$color-question-icon-color: #E3E0DF;
+$color-question-background: #FFFFFF;
+
+$color-question-timer-primary: #F36633;
+$color-question-timer-secondary: #FFF;
+
+$color-button-primary-background: #FFF;
+$color-button-primary: #15717D;
+
+$color-text: #50433d;
+$color-text-light: #FFFFFF;
+$color-text-dark: #000000;
+
+$color-border-primary: #50433d;
+$color-border-secondary: #9c9b9b;
+$color-block-background-primary: #50433d;
+
+$color-chart-labels: #50433d;
+
+$color-pbs-background: #FFFFFF;
+$page-max-width:960px;
+$content-max-width:940px;
+
+$page-border-width:10px;
+
+
+$transition-hover-duration: 200ms;
+
+$color-primary-title: #f36633;
+
+
+@mixin inner-container{
+  position: relative;
+  max-width: $content-max-width;
+  margin:0 auto;
+  padding:20px;
+
+  @include respond-below(sm)
+  {
+    padding-top:20px;
+  }
+}

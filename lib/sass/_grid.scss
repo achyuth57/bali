@@ -1,0 +1,20 @@
+$gutter: 0;
+
+.row{
+  margin-left:-$gutter;
+  margin-right:-$gutter;
+  &:before,
+  &:after {
+    content:"";
+    display: table ;
+    clear:both;
+  }
+}
+
+
+@include grid-columns(12,$gutter)
+@include respond-min(xxs){ @include grid-columns(12,$gutter,xxs)}
+@include respond-min(xs){ @include grid-columns(12,$gutter,xs)}
+@include respond-min(sm){ @include grid-columns(12,$gutter,sm)}
+@include respond-min(md){ @include grid-columns(12,$gutter,md)}
+@include respond-min(lg){ @include grid-columns(12,$gutter,lg)}

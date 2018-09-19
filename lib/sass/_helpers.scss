@@ -1,0 +1,223 @@
+@import "variables";
+
+//ccs3 helpers
+@mixin transition($transition...){
+  -webkit-transition: $transition;
+  -moz-transition: $transition;
+  -o-transition: $transition;
+  transition: $transition;
+}
+
+@mixin transition-delay($transition-delay...){
+  -webkit-transition-delay: $transition-delay;
+  -moz-transition-delay: $transition-delay;
+  -o-transition-delay: $transition-delay;
+  transition-delay: $transition-delay;
+}
+
+@mixin transform($transform...){
+  -webkit-transform: $transform;
+  -moz-transform: $transform;
+  -o-transform: $transform;
+  transform: $transform;
+}
+
+@mixin transform-origin($transform-origin...){
+  -webkit-transform-origin: $transform-origin;
+  -moz-transform-origin: $transform-origin;
+  -o-transform-origin: $transform-origin;
+  transform-origin: $transform-origin;
+}
+
+
+//font helper
+@mixin font($name, $file-name, $weight, $style)
+{
+  @font-face {
+    font-family: #{$name};
+    src: url('../fonts/#{$file-name}.eot');
+    src: url('../fonts/#{$file-name}.otf') format('otf'),
+    url('../fonts/#{$file-name}.woff') format('woff');
+    font-weight:  #{$weight};
+    font-style: #{$style};
+  }
+}
+
+//grid helper
+@mixin grid-columns($columns,$gutter,$prefix:""){
+
+  $class-slug: col;
+
+  @if($prefix != ""){
+    $class-slug: ($class-slug+'-'+$prefix)
+  }
+
+  @for $i from 0 to $columns{
+    .#{$class-slug}-#{$i+1}{
+      width: ((($i+1)/$columns) * 100%);
+      min-height: 1px;
+      float: left;
+      position: relative;
+      padding-left:$gutter;
+      padding-right:$gutter;
+    }
+  }
+}
+
+//Respond only when in range
+@mixin respond-in($media) {
+  @if $media == xxs {
+    @media only screen and (max-width: $break-extra-extra-small) { @content; }
+  }
+  @else if $media == xs {
+    @media only screen and (min-width: $break-extra-extra-small + 1) and (max-width: $break-extra-small) { @content; }
+  }
+  @else if $media == sm {
+    @media only screen and (min-width: $break-extra-small+1) and (max-width: $break-small){ @content; }
+  }
+  @else if $media == md{
+    @media only screen and (min-width: $break-small+1) and (max-width: $break-medium) { @content; }
+  }
+  @else if $media == lg{
+    @media only screen and (min-width: $break-medium+1) and (max-width: $break-large) { @content; }
+  }
+  @else if $media == xl{
+    @media only screen and (min-width: $break-large+1) { @content; }
+  }
+}
+//Respond only when less than or equal to
+@mixin respond-max($media) {
+  @if $media == xxs {
+    @media only screen and (max-width: $break-extra-extra-small) { @content; }
+  }
+  @else if $media == xs {
+    @media only screen and (max-width: $break-extra-small) { @content; }
+  }
+  @else if $media == sm {
+    @media only screen and (max-width: $break-small){ @content; }
+  }
+  @else if $media == md{
+    @media only screen and (max-width: $break-medium) { @content; }
+  }
+  @else if $media == lg{
+    @media only screen and (max-width: $break-large) { @content; }
+  }
+}
+
+//Respond only when less than or equal to
+@mixin respond-min($media) {
+  @if $media == xxs {
+    @media only screen and (min-width: $break-extra-extra-small) { @content; }
+  }
+  @else if $media == xs {
+    @media only screen and (min-width: $break-extra-small) { @content; }
+  }
+  @else if $media == sm {
+    @media only screen and (min-width: $break-small){ @content; }
+  }
+  @else if $media == md{
+    @media only screen and (min-width: $break-medium) { @content; }
+  }
+  @else if $media == lg{
+    @media only screen and (min-width: $break-large) { @content; }
+  }
+}
+
+//Respond only when greater than
+@mixin respond-above($media) {
+  @if $media == xxs {
+    @media only screen and (min-width: $break-extra-extra-small + 1) { @content; }
+  }
+  @else if $media == xs {
+    @media only screen and (min-width: $break-extra-small + 1) { @content; }
+  }
+  @else if $media == sm {
+    @media only screen and (min-width: $break-small + 1){ @content; }
+  }
+  @else if $media == md{
+    @media only screen and (min-width: $break-medium + 1) { @content; }
+  }
+  @else if $media == lg{
+    @media only screen and (min-width: $break-large + 1) { @content; }
+  }
+}
+
+//Respond only when less than
+@mixin respond-below($media) {
+  @if $media == xxs {
+    @media only screen and (max-width: $break-extra-extra-small - 1) { @content; }
+  }
+  @else if $media == xs {
+    @media only screen and (max-width: $break-extra-small - 1) { @content; }
+  }
+  @else if $media == sm {
+    @media only screen and (max-width: $break-small - 1){ @content; }
+  }
+  @else if $media == md{
+    @media only screen and (max-width: $break-medium - 1) { @content; }
+  }
+  @else if $media == lg{
+    @media only screen and (max-width: $break-large - 1) { @content; }
+  }
+}
+
+//Repsonsive visibility
+@mixin responsive-visibility($breakpoint,$display){
+  .#{$breakpoint}-visible-#{$display}{
+    display:none;
+
+    @include respond-in($breakpoint) {
+      display: #{$display} !important;
+    }
+  }
+
+  .#{$breakpoint}-hidden-#{$display}{
+    display: #{$display};
+
+    @include respond-max($breakpoint){
+      display:none;
+    }
+  }
+}
+
+@mixin if-ie-10-plus()
+{
+  @media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+    @content;
+  }
+}
+
+@mixin animation($name, $duration, $count, $timing)
+{
+  -webkit-animation-name: $name;
+  -webkit-animation-duration: $duration;
+  -webkit-animation-iteration-count: $count;
+  -webkit-animation-timing-function: $timing;
+  -moz-animation-name: $name;
+  -moz-animation-duration: $duration;
+  -moz-animation-iteration-count: $count;
+  -moz-animation-timing-function: $timing;
+  -ms-animation-name: $name;
+  -ms-animation-duration: $duration;
+  -ms-animation-iteration-count: $count;
+  -ms-animation-timing-function: $timing;
+  animation-name: $name;
+  animation-duration: $duration;
+  animation-iteration-count: $count;
+  animation-timing-function: $timing;
+}
+
+@mixin keyframes($animationName) {
+  @-webkit-keyframes #{$animationName} {
+    @content;
+  }
+  @-moz-keyframes #{$animationName} {
+    @content;
+  }
+  @-o-keyframes #{$animationName} {
+    @content;
+  }
+  @keyframes #{$animationName} {
+    @content;
+  }
+}
